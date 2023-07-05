@@ -52,7 +52,11 @@ export const theme = createTheme({
     s56: 56,
   },
   borderRadii: {s8: 8, s12: 12, s16: 16},
+  textVariants: {
+    defaults: {},
+  },
 });
 
 // extraindo a interface
 export type Theme = typeof theme;
+export type ThemeColors = keyof Theme['colors'];

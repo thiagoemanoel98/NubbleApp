@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {Text} from './src/components/Text/Text';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
@@ -10,12 +10,14 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
-        <View>
+        <Box height={2000} backgroundColor="grayWhite">
           <Text preset="headingLarge">Thiago Emanoel</Text>
 
           <Button title="Entrar" marginBottom="s12" backgroundColor="error" />
+          <Button title="Outline" preset="outline" marginBottom="s12" />
+
           <Button title="Entrar" loading />
-        </View>
+        </Box>
       </SafeAreaView>
     </ThemeProvider>
   );
