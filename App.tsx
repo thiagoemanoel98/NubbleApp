@@ -12,12 +12,9 @@ export default function App() {
       <SafeAreaView>
         <View>
           <Text preset="headingLarge">Thiago Emanoel</Text>
-          <Box marginBottom="s24" paddingHorizontal="s20">
-            <Button title="Entrar" />
-          </Box>
-          <Box marginBottom="s24" paddingHorizontal="s20">
-            <Button title="Entrar" loading />
-          </Box>
+
+          <Button title="Entrar" marginBottom="s12" backgroundColor="error" />
+          <Button title="Entrar" loading />
         </View>
       </SafeAreaView>
     </ThemeProvider>
