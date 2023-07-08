@@ -3,8 +3,9 @@ import {SafeAreaView} from 'react-native';
 import {Text} from './src/components/Text/Text';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
-import {Button} from './src/components/Button/Button';
+
 import {Box} from './src/components/Box/Box';
+import {Icon} from './src/components/Icon/Icon';
 
 export default function App() {
   return (
@@ -13,10 +14,8 @@ export default function App() {
         <Box height={2000} backgroundColor="grayWhite">
           <Text preset="headingLarge">Thiago Emanoel</Text>
 
-          <Button title="Entrar" marginBottom="s12" backgroundColor="error" />
-          <Button title="Outline" preset="outline" marginBottom="s12" />
-
-          <Button title="Entrar" loading />
+          <Icon name="bell" size={42} color="error" />
+          <Icon name="eyeOn" />
         </Box>
       </SafeAreaView>
     </ThemeProvider>

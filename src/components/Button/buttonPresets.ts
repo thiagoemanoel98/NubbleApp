@@ -7,6 +7,7 @@ interface ButtonUI {
   content: ThemeColors;
 }
 
+// mapeia pra um objeto
 export const buttonPresets: Record<
   ButtonPreset,
   {
