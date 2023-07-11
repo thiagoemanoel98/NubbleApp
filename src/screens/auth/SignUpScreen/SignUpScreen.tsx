@@ -8,7 +8,7 @@ export default function SignUpScreen() {
   function submitForm() {}
 
   return (
-    <Screen canGoBack>
+    <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32">
         Criar uma conta
       </Text>
@@ -18,6 +18,26 @@ export default function SignUpScreen() {
         label="Nome completo"
         placeholder="Digite seu nome completo"
         boxProps={{mb: 's20'}}
+      />
+      <TextInput
+        label="Email"
+        placeholder="Digite seu email"
+        boxProps={{mb: 's20'}}
+      />
+      <TextInput
+        label="Senha"
+        placeholder="Digite sua senha"
+        boxProps={{mb: 's48'}}
+      />
+      <TextInput
+        label="Email"
+        placeholder="Digite seu email"
+        boxProps={{mb: 's20'}}
+      />
+      <TextInput
+        label="Senha"
+        placeholder="Digite sua senha"
+        boxProps={{mb: 's48'}}
       />
       <TextInput
         label="Email"
