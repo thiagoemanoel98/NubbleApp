@@ -2,8 +2,8 @@ import React from 'react';
 import {Text} from '../../../components/Text/Text';
 import TextInput from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
-import {Icon} from '../../../components/Icon/Icon';
 import Screen from '../../../components/Screen/Screen';
+import PasswordInput from '../../../components/PasswordInput/PasswordInput';
 
 export default function LoginScreen() {
   return (
@@ -21,12 +21,10 @@ export default function LoginScreen() {
         boxProps={{mb: 's20'}}
       />
 
-      <TextInput
-        errorMessage="Senha inválida"
+      <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
-        rightComponent={<Icon name="eyeOn" color="gray2" />}
-        boxProps={{mb: 's10'}}
+        boxProps={{mb: 's48'}}
       />
 
       <Text color="primary" preset="paragraphSmall" bold>
