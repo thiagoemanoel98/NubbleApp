@@ -29,13 +29,15 @@ import {ThemeColors} from '../../theme/theme';
 import EyeOnIcon from '../../assets/icons/EyeOnIcon';
 import EyeOffIcon from '../../assets/icons/EyeOffIcon';
 import {Pressable} from 'react-native';
+import {CheckRoundIcon} from '../../assets/icons/CheckRoundIcon';
+import {MessageRoundIcon} from '../../assets/icons/MessageRoundIcon';
 
 export interface IconBase {
   size?: number;
   color?: string;
 }
 
-interface Props {
+export interface IconProps {
   name: IconNames;
   color?: ThemeColors;
   size?: number;
@@ -47,7 +49,7 @@ export function Icon({
   color = 'backgroundContrast',
   size,
   onPress,
-}: Props) {
+}: IconProps) {
   const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
 
@@ -72,6 +74,8 @@ const iconRegistry = {
   bookmarkFill: BookmarkFillIcon,
   camera: CameraIcon,
   chat: ChatIcon,
+  checkRound: CheckRoundIcon,
+  messageRound: MessageRoundIcon,
   chatOn: ChatOnIcon,
   check: CheckIcon,
   comment: CommentIcon,

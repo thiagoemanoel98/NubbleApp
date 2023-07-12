@@ -1,6 +1,6 @@
 import {createTheme} from '@shopify/restyle';
 
-const pallet = {
+export const palette = {
   greenPrimary: '#074C4E',
   greenPrimaryLight: '#EAF6F6',
   carrotSecondary: '#F86F2D',
@@ -22,20 +22,20 @@ const pallet = {
 // cores semânticas
 export const theme = createTheme({
   colors: {
-    ...pallet,
-    primary: pallet.greenPrimary,
-    primaryContrast: pallet.grayWhite,
+    ...palette,
+    primary: palette.greenPrimary,
+    primaryContrast: palette.grayWhite,
 
-    buttonPrimary: pallet.greenPrimary,
+    buttonPrimary: palette.greenPrimary,
 
-    background: pallet.grayWhite,
-    backgroundContrast: pallet.grayBlack,
+    background: palette.grayWhite,
+    backgroundContrast: palette.grayBlack,
 
-    error: pallet.redError,
-    errorLight: pallet.redErrorLight,
+    error: palette.redError,
+    errorLight: palette.redErrorLight,
 
-    success: pallet.greenSuccess,
-    successLight: pallet.greenSuccessLight,
+    success: palette.greenSuccess,
+    successLight: palette.greenSuccessLight,
   },
   spacing: {
     s4: 4,
