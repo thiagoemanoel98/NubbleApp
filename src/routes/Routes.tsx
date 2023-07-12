@@ -4,7 +4,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from '../screens/auth/LoginScreen/LoginScreen';
 import SignUpScreen from '../screens/auth/SignUpScreen/SignUpScreen';
 
-const Stack = createNativeStackNavigator();
+// fullScreenGestureEnabled = Gestos de navegação sao detectados na tela inteira
+// Não apenas na ponta (IOS)
+
+export type RootStackParamList = {
+  LoginScreen: undefined;
+  SignUpScreen: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function Router() {
   return (
@@ -13,6 +21,7 @@ export function Router() {
         initialRouteName="LoginScreen"
         screenOptions={{
           headerShown: false,
+          fullScreenGestureEnabled: true,
         }}>
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
