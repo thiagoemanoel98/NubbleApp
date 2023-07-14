@@ -3,17 +3,13 @@ import Screen from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import TextInput from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
-import {RootStackParamList} from '../../../routes/Routes';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
-type ScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'ForgotPasswordScreen'
->;
+export default function ForgotPasswordScreen() {
+  const {reset} = useResetNavigationSuccess();
 
-export default function ForgotPasswordScreen({navigation}: ScreenProps) {
   function submitForm() {
-    navigation.navigate('SuccessScreen', {
+    reset({
       title: `Enviamos as instruções para o seu ${'\n'}email`,
       description:
         'Clique no link enviado no seu e-mail para recuperar sua senha',
