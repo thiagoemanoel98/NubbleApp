@@ -1,18 +1,22 @@
 import React from 'react';
-import {Text} from '../../../components/Text/Text';
-import {Button} from '../../../components/Button/Button';
-import Screen from '../../../components/Screen/Screen';
+//import {Text} from '../../../components/Text/Text';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../routes/Routes';
 import {useForm} from 'react-hook-form';
 import {LoginSchemaType, loginSchema} from './loginSchema';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {FormTextInput} from '../../../components/Form/FormTextInput';
-import {FormPasswordTextInput} from '../../../components/Form/FormPasswordTextInput';
+
+import {
+  Text,
+  Screen,
+  Button,
+  FormTextInput,
+  FormPasswordTextInput,
+} from '@components';
+import {RootStackParamList} from '@routes';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
-export default function LoginScreen({navigation}: ScreenProps) {
+export function LoginScreen({navigation}: ScreenProps) {
   const {control, formState, handleSubmit} = useForm<LoginSchemaType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {

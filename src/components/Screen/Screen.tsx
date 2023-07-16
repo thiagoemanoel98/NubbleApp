@@ -15,11 +15,7 @@ interface ScreenProps {
   scrollable?: boolean;
 }
 
-export default function Screen({
-  children,
-  scrollable,
-  canGoBack = false,
-}: ScreenProps) {
+export function Screen({children, scrollable, canGoBack = false}: ScreenProps) {
   const {top, bottom} = useAppSafeArea();
   const {colors} = useAppTheme();
   const navigation = useNavigation();

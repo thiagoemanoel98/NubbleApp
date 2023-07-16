@@ -1,7 +1,5 @@
 import React from 'react';
-import Screen from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
-import TextInput from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
 import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 import {zodResolver} from '@hookform/resolvers/zod';
@@ -11,8 +9,9 @@ import {
   forgotPasswordSchema,
 } from './forgotPasswordSchema';
 import {FormTextInput} from '../../../components/Form/FormTextInput';
+import {Screen} from '@components';
 
-export default function ForgotPasswordScreen() {
+export function ForgotPasswordScreen() {
   const {reset} = useResetNavigationSuccess();
 
   const {control, formState, handleSubmit} = useForm<ForgotPasswordSchemaType>({

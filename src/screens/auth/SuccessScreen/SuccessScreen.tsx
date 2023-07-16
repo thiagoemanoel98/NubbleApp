@@ -1,14 +1,11 @@
 import React from 'react';
-import Screen from '../../../components/Screen/Screen';
-import {Icon} from '../../../components/Icon/Icon';
-import {Text} from '../../../components/Text/Text';
-import {Button} from '../../../components/Button/Button';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../routes/Routes';
+import {Button, Icon, Screen, Text} from '@components';
+import {RootStackParamList} from '@routes';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SuccessScreen'>;
 
-export default function SuccessScreen({route, navigation}: ScreenProps) {
+export function SuccessScreen({route, navigation}: ScreenProps) {
   function goBackToBegin() {
     // TODO
     navigation.navigate('LoginScreen');
