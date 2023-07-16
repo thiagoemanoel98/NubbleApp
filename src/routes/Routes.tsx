@@ -1,13 +1,15 @@
 import React from 'react';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import {IconProps} from '@components';
 import {
   ForgotPasswordScreen,
   LoginScreen,
   SuccessScreen,
   SignUpScreen,
 } from '@screens';
-import {IconProps} from '@components';
 
 // fullScreenGestureEnabled = Gestos de navegação sao detectados na tela inteira
 // Não apenas na ponta (IOS)

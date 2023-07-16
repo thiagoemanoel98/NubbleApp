@@ -1,15 +1,19 @@
 import React from 'react';
-import {Text} from '../../../components/Text/Text';
-import {Button} from '../../../components/Button/Button';
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
+
+import {Screen} from '@components';
+
+import {Button} from '../../../components/Button/Button';
+import {FormTextInput} from '../../../components/Form/FormTextInput';
+import {Text} from '../../../components/Text/Text';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+
 import {
   ForgotPasswordSchemaType,
   forgotPasswordSchema,
 } from './forgotPasswordSchema';
-import {FormTextInput} from '../../../components/Form/FormTextInput';
-import {Screen} from '@components';
 
 export function ForgotPasswordScreen() {
   const {reset} = useResetNavigationSuccess();
