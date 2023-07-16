@@ -30,6 +30,7 @@ export function LoginScreen({navigation}: ScreenProps) {
 
   function submitForm({email, password}: LoginSchemaType) {
     navigation.navigate('SignUpScreen');
+    console.log(email, password);
   }
 
   function navigateToSignUpScreen() {
