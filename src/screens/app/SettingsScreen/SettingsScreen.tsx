@@ -1,13 +1,10 @@
 import React from 'react';
 
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {AppStackParamList} from 'src/routes/AppStack';
+import {AppScreenProps} from 'src/routes/navigationType';
 
 import {Button, Screen, Text} from '@components';
 
-type ScreenProps = NativeStackScreenProps<AppStackParamList, 'SettingsScreen'>;
-
-export function SettigsScreen({props}: ScreenProps) {
+export function SettigsScreen({props}: AppScreenProps<'SettingsScreen'>) {
   return (
     <Screen>
       <Text preset="headingMedium">Settings Screen</Text>
