@@ -8,6 +8,7 @@
       "@screens": ["src/screens"],
       "@theme": ["src/theme"],
       "@routes": ["src/routes"],
+      "@domain": ["src/domain"],
     }
   }
 }
