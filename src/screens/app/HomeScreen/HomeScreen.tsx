@@ -8,7 +8,7 @@ import {AppTabScreenProps} from '@routes';
 
 import {HomeHeader} from './components/HomeHeader';
 
-export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
+export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const [postList, setPostList] = useState<Post[]>();
 
   useEffect(() => {
