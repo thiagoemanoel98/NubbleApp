@@ -15,8 +15,6 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
     postService.getList().then(list => setPostList(list));
   }, []);
 
-  console.log('hee', postList);
-
   function renderItem({item}: ListRenderItemInfo<Post>) {
     return <PostItem post={item} />;
   }
