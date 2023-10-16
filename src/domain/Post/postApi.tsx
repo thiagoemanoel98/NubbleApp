@@ -1,7 +1,8 @@
-import {postListMock} from './postListMock';
-import {Post} from './postTypes';
+import {PageAPI} from '@api';
 
-async function getList(): Promise<Post[]> {
+import {PostAPI} from './postTypes';
+
+async function getList(): Promise<PageAPI<PostAPI>> {
   let headerList = {
     Authorization:
       'Bearer MQ.02MN_jo4_ZN57n6FcScHve5a5cy6m2v7DgboEIxdqEWUQgwsdWcVYskytoR9',
@@ -12,11 +13,10 @@ async function getList(): Promise<Post[]> {
     headers: headerList,
   });
 
-  let data = await response.json();
+  let data: PageAPI<PostAPI> = await response.json();
   console.log('Pego: ', data);
 
-  await new Promise(resolve => setTimeout(() => resolve(''), 1000));
-  return postListMock;
+  return data;
 }
 
 export const postApi = {
