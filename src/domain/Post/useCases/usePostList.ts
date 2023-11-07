@@ -9,38 +9,59 @@ export function usePostList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [page, setPage] = useState(1);
+  const [hasNextPage, setHasNextPage] = useState(true);
 
-  async function fetchData() {
+  async function fetchInitialData() {
     try {
       setLoading(true);
-      const list = await postService.getList(page);
-      setPage(prev => prev + 1);
-      setPostList(prev => [...prev, ...list]);
+      const {data, meta} = await postService.getList(1);
+
+      if (meta.hasNextpage) {
+        setPage(2);
+      } else {
+        setHasNextPage(false);
+      }
+      setPostList(data);
     } catch (err) {
       setError(true);
     }
     setLoading(false);
   }
 
-  function fetchNextPage() {
+  async function fetchNextPage() {
     // Resolve o problema dele ser chamado antes de
     // Carregar os itens da listagem
-    if (!loading) {
-      fetchData();
+    if (loading && !hasNextPage) {
+      return;
+    }
+    try {
+      setLoading(true);
+      const {data, meta} = await postService.getList(page);
+
+      if (meta.hasNextpage) {
+        setPage(prev => prev + 1);
+      } else {
+        setHasNextPage(false);
+      }
+
+      setPostList(prev => [...prev, ...data]);
+      setPage(prev => prev + 1);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   }
 
   useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchInitialData();
   }, []);
 
   return {
     postList,
     error,
     loading,
-    fetchData,
     fetchNextPage,
-    refetch: fetchData,
+    refresh: fetchInitialData,
   };
 }
