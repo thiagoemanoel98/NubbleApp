@@ -37,7 +37,7 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
       <FlatList
         ref={flatListRef}
         data={postList}
-        keyExtractor={item => item.id}
+        keyExtractor={item => String(item.id)}
         renderItem={renderItem}
         onEndReached={fetchNextPage}
         onEndReachedThreshold={0.2}
